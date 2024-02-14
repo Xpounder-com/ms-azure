@@ -1,0 +1,19 @@
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        service: [microservice-1, microservice-2]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build Docker image for ${{ matrix.service }}
+      run: |
+        cd ${{ matrix.service }}
+        docker build -t ${{ matrix.service }}:latest .
