@@ -16,7 +16,7 @@ thread = openai.Thread.create(
   messages=[
     {
       "role": "user",
-      "content": "How do I troubleshoot my device?"
+      "content": "How do I troubleshoot my device?",
       "file_ids": ["file_id_1", "file_id_2", "file_id_3"] 
     }
   ]
